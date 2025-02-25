@@ -1,5 +1,5 @@
 html {
-  background-color: rgb(151, 116, 116);
+  background-color: #a27b5c;
 }
 
 * {
@@ -18,10 +18,11 @@ body {
 }
 
 header {
-  background: #6b4f4f;
-  color: #fff;
+  background: #3f4f44;
+  color: #dcd7c9;
   padding: 20px 0;
   text-align: center;
+  position: relative;
 }
 
 nav ul {
@@ -36,19 +37,25 @@ nav ul li {
 }
 
 nav ul li a {
-  color: #fff;
+  color: #dcd7c9;
   text-decoration: none;
   font-weight: bold;
 }
 
 nav ul li button {
   background: #6b4f4f;
-  color: #fff;
+  color: #dcd7c9;
   border: none;
   padding: 10px 20px;
   cursor: pointer;
   border-radius: 4px;
   font-size: 16px;
+}
+
+#logout-button {
+  position: absolute;
+  top: 0px;
+  right: 20px;
 }
 
 .hero {
@@ -127,11 +134,16 @@ button {
 }
 
 .popup-content {
-  background: #fff;
+  display: flex;
+  background: #3f4f44;
+  color: #dcd7c9;
   padding: 20px;
   border-radius: 8px;
   text-align: center;
-  width: 300px;
+  width: 80%;
+  height: 80%;
+  margin: 0 auto;
+  margin-top: 40px;
 }
 
 .popup-content h2 {
@@ -160,4 +172,8 @@ button {
   cursor: pointer;
   border-radius: 4px;
   font-size: 16px;
+}
+
+#register-here {
+  color: #a27b5c;
 }

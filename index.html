@@ -20,16 +20,14 @@
           <li><a href="#about">About</a></li>
           <li><a href="#menu">Menu</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li>
-            <button
-              id="logout-button"
-              onclick="logout()"
-            >
-              Logout
-            </button>
-          </li>
         </ul>
       </nav>
+      <button
+        id="logout-button"
+        onclick="logout()"
+      >
+        Logout
+      </button>
     </header>
 
     <!-- Hero Section -->
@@ -126,7 +124,7 @@
       class="popup"
     >
       <div class="popup-content">
-        <h2 id="popup-title">Login</h2>
+        <h2 id="popup-title">I'm from around here</h2>
         <form id="login-form">
           <label for="username">Username:</label>
           <input
@@ -150,8 +148,9 @@
           </button>
         </form>
         <p id="toggle-form">
-          Don't have an account?
+          I'm new in town
           <a
+            id="register-here"
             href="#"
             onclick="toggleForm()"
             >Register here</a
@@ -164,7 +163,7 @@
     <footer id="contact">
       <p>
         Contact us at:
-        <a href="mailto:contact@coffeehaven.com">contact@coffeehaven.com</a>
+        <a href="mailto:contact@coffeehaven.com">contact@coffeesaloon.com</a>
       </p>
       <p>123 Coffee Street, Bean Town</p>
     </footer>
