@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+    <title>Coffee Saloon</title>
+    <link
+      rel="stylesheet"
+      href="style.css"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Coffee Saloon</h1>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li>
+            <button
+              id="logout-button"
+              onclick="logout()"
+            >
+              Logout
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <h1 id="hero-title">Welcome to Coffee Saloon</h1>
+    </section>
+
+    <!-- About Section -->
+    <section
+      id="about"
+      class="content"
+    >
+      <h2>About Us</h2>
+      <p>
+        Welcome to our Wild West Saloon, where every cup of coffee is as bold
+        and spirited as a cowboy’s tale. Here, we serve up robust, handcrafted
+        brews in a setting that recalls the dusty trails and lively gatherings
+        of the frontier. Whether you’re looking to lasso a quick espresso or
+        settle in for a smooth latte, our saloon-style retreat offers a taste of
+        the untamed West in every sip.
+      </p>
+    </section>
+
+    <!-- Menu Section -->
+    <section
+      id="menu"
+      class="content"
+    >
+      <h2>Our Menu</h2>
+      <div class="menu-item">
+        <img
+          src="./assets/cowboy-style.jpeg"
+          alt="Cowboy"
+        />
+        <div>
+          <h3>Cowboy Style</h3>
+          <p>Good ol' fashion coffee, just like Wyatt Earp used to drink.</p>
+        </div>
+      </div>
+      <div class="menu-item">
+        <img
+          src="./assets/latte.jpeg"
+          alt="Latte"
+        />
+        <div>
+          <h3>Latte</h3>
+          <p>
+            A creamy blend of espresso and steamed milk with a hint of vanilla.
+          </p>
+        </div>
+      </div>
+      <div class="menu-item">
+        <img
+          src="./assets/espresso.jpeg"
+          alt="Espresso"
+        />
+        <div>
+          <h3>Espresso</h3>
+          <p>
+            Bold and intense, our espresso is the perfect start to your day.
+          </p>
+        </div>
+      </div>
+      <div class="menu-item">
+        <img
+          src="./assets/cappuccino.jpeg"
+          alt="Cappuccino"
+        />
+        <div>
+          <h3>Cappuccino</h3>
+          <p>
+            A balanced combination of espresso, steamed milk, and foam for a
+            velvety finish.
+          </p>
+        </div>
+        <div class="menu-item">
+          <img
+            src="./assets/sarsaparilla.jpeg"
+            alt="Sarsaparilla"
+          />
+          <div>
+            <h3>Sarsaparilla</h3>
+            <p>
+              Something for the kids. They'll love this ol' timey root beer.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Login Popup -->
+    <div
+      id="login-popup"
+      class="popup"
+    >
+      <div class="popup-content">
+        <h2 id="popup-title">Login</h2>
+        <form id="login-form">
+          <label for="username">Username:</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            required
+          />
+          <label for="password">Password:</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            required
+          />
+          <button
+            type="submit"
+            id="submit-button"
+          >
+            Login
+          </button>
+        </form>
+        <p id="toggle-form">
+          Don't have an account?
+          <a
+            href="#"
+            onclick="toggleForm()"
+            >Register here</a
+          >
+        </p>
+      </div>
+    </div>
+
+    <!-- Footer / Contact Section -->
+    <footer id="contact">
+      <p>
+        Contact us at:
+        <a href="mailto:contact@coffeehaven.com">contact@coffeehaven.com</a>
+      </p>
+      <p>123 Coffee Street, Bean Town</p>
+    </footer>
+
+    <script src="/main.js"></script>
+  </body>
+</html>
