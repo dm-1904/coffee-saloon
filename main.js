@@ -1,3 +1,9 @@
+require("dotenv").config();
+
+const apiKey = process.env.API_KEY;
+
+console.log(apiKey);
+
 window.onload = function () {
   checkUser();
 };
