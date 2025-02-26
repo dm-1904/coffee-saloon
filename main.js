@@ -1,12 +1,19 @@
-require("dotenv").config();
-
-const apiKey = process.env.API_KEY;
-
-console.log(apiKey);
+import { api_url } from "./api.js";
 
 window.onload = function () {
   checkUser();
 };
+
+const apiCall = () => {
+  return fetch(api_url, { mode: "no-cors" })
+    .then((res) => res.json())
+    .then((data) => console.log(data))
+    .catch((err) => {
+      throw new Error(err.message);
+    });
+};
+
+apiCall();
 
 function checkUser() {
   const user = localStorage.getItem("user");
@@ -34,6 +41,7 @@ document.getElementById("login-form").onsubmit = function (event) {
         );
         if (user) {
           localStorage.setItem("user", JSON.stringify(user));
+
           document.getElementById(
             "hero-title"
           ).innerText = `Welcome to Coffee Saloon, ${user.username}`;
