@@ -10,7 +10,7 @@ function checkUser() {
       "hero-title"
     ).innerText = `Howdy ${parsedUser.username}! Welcome to Coffee Saloon.`;
   } else {
-    document.getElementById("login-popup").style.display = "block";
+    document.getElementById("login-popup").style.display = "flex";
   }
 }
 
