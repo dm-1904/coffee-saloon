@@ -1,16 +1,3 @@
-export const api_url = "https://zenquotes.io/api/quotes";
-
-const apiCall = () => {
-  return fetch(api_url)
-    .then((res) => res.json())
-    .then((data) => console.log(data))
-    .catch((err) => {
-      throw new Error(err.message);
-    });
-};
-
-apiCall();
-
 // export const apiData = [
 //   {
 //     q: "Life is a succession of lessons, which must be lived to be understood.",

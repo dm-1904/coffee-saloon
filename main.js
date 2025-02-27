@@ -1,19 +1,26 @@
-import { api_url } from "./api.js";
+const apiKey = import.meta.env.VITE_API_KEY;
+const corsProxy = "https://api.allorigins.win/get?url=";
+const apiUrlWithProxy = `${corsProxy}${encodeURIComponent(apiKey)}`;
 
-window.onload = function () {
-  checkUser();
-};
+console.log(apiUrlWithProxy);
 
 const apiCall = () => {
-  return fetch(api_url, { mode: "no-cors" })
+  return fetch(apiUrlWithProxy)
     .then((res) => res.json())
-    .then((data) => console.log(data))
+    .then((data) => {
+      const parsedData = JSON.parse(data.contents);
+      console.log(parsedData);
+    })
     .catch((err) => {
       throw new Error(err.message);
     });
 };
 
 apiCall();
+
+window.onload = function () {
+  checkUser();
+};
 
 function checkUser() {
   const user = localStorage.getItem("user");
