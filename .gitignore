@@ -1,2 +1,7 @@
 api.env
 node_modules
+<<<<<<< HEAD
+=======
+api.js
+.env
+>>>>>>> apiCall

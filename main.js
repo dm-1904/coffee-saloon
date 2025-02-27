@@ -1,18 +1,52 @@
+const apiKey = import.meta.env.VITE_API_KEY;
+const corsProxy = "https://api.allorigins.win/get?url=";
+const apiUrlWithProxy = `${corsProxy}${encodeURIComponent(apiKey)}`;
+
+const apiCall = () => {
+  return fetch(apiUrlWithProxy)
+    .then((res) => res.json())
+    .then((data) => {
+      const parsedData = JSON.parse(data.contents);
+      localStorage.setItem("apiData", JSON.stringify(parsedData));
+    })
+    .catch((err) => {
+      throw new Error(`Error fetching API data: ${err}`);
+    });
+};
+
 window.onload = function () {
   checkUser();
 };
 
-function checkUser() {
+const checkUser = () => {
   const user = localStorage.getItem("user");
   if (user) {
     const parsedUser = JSON.parse(user);
     document.getElementById(
       "hero-title"
     ).innerText = `Howdy ${parsedUser.username}! Welcome to Coffee Saloon.`;
+    apiCall();
+    displayAPIdata();
   } else {
     document.getElementById("login-popup").style.display = "flex";
   }
-}
+};
+
+const displayAPIdata = () => {
+  const data = localStorage.getItem("apiData");
+  if (data) {
+    const parsedData = JSON.parse(data);
+    const container = document.getElementById("quoteContainer");
+    let index = 0;
+    container.innerHTML = parsedData[index].h;
+    setInterval(() => {
+      index = (index + 1) % parsedData.length;
+      container.innerHTML = parsedData[index].h;
+    }, 10000);
+  } else {
+    return;
+  }
+};
 
 document.getElementById("login-form").onsubmit = function (event) {
   event.preventDefault();
@@ -28,6 +62,7 @@ document.getElementById("login-form").onsubmit = function (event) {
         );
         if (user) {
           localStorage.setItem("user", JSON.stringify(user));
+
           document.getElementById(
             "hero-title"
           ).innerText = `Welcome to Coffee Saloon, ${user.username}`;
@@ -67,7 +102,7 @@ document.getElementById("login-form").onsubmit = function (event) {
   document.getElementById("login-popup").style.display = "none";
 };
 
-function toggleForm() {
+const toggleForm = () => {
   const isLogin = document.getElementById("popup-title").innerText === "Login";
   document.getElementById("popup-title").innerText = isLogin
     ? "Register"
@@ -78,9 +113,10 @@ function toggleForm() {
   document.getElementById("toggle-form").innerHTML = isLogin
     ? 'Already have an account? <a href="#" onclick="toggleForm()">Login here</a>'
     : 'Don\'t have an account? <a href="#" onclick="toggleForm()">Register here</a>';
-}
+};
 
-function logout() {
+const logout = () => {
   localStorage.removeItem("user");
+  localStorage.removeItem("apiData");
   location.reload();
-}
+};
