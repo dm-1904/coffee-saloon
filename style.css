@@ -104,11 +104,16 @@ nav ul li button {
   color: #6b4f4f;
 }
 
+.category-div {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .menu-item {
   display: flex;
+  flex-direction: column;
   align-items: center;
   margin-bottom: 30px;
-  border-bottom: 1px solid #ddd;
   padding-bottom: 20px;
 }
 

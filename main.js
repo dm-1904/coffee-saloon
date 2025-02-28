@@ -1,4 +1,5 @@
 import { coffeeData } from "./coffeeData.js";
+import { bakeryData } from "./coffeeData.js";
 
 const apiKey = import.meta.env.VITE_API_KEY;
 const corsProxy = "https://api.allorigins.win/get?url=";
@@ -54,10 +55,13 @@ const displayAPIdata = () => {
 const displayMenuData = () => {
   const menuSection = document.getElementById("menu");
   coffeeData.forEach((category) => {
+    const categoryDiv = document.createElement("div");
+    categoryDiv.className = "category-div";
+
     const categoryTitle = document.createElement("h2");
     categoryTitle.className = "category";
     categoryTitle.innerText = category[0].category;
-    menuSection.appendChild(categoryTitle);
+    categoryDiv.appendChild(categoryTitle);
 
     category.slice(1).forEach((item) => {
       const menuItem = document.createElement("div");
@@ -74,8 +78,13 @@ const displayMenuData = () => {
 
       menuItem.appendChild(img);
       menuItem.appendChild(itemName);
-      menuSection.appendChild(menuItem);
+      categoryDiv.appendChild(menuItem);
     });
+
+    const hr = document.createElement("hr");
+    categoryDiv.appendChild(hr);
+
+    menuSection.appendChild(categoryDiv);
   });
 };
 
