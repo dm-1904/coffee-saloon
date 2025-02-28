@@ -10,7 +10,7 @@ const apiCall = () => {
       localStorage.setItem("apiData", JSON.stringify(parsedData));
     })
     .catch((err) => {
-      throw new Error(`Error fetching API data: ${err}`);
+      console.error(`Error fetching API data: ${err}`);
     });
 };
 
@@ -26,8 +26,7 @@ const checkUser = () => {
     document.getElementById(
       "hero-title"
     ).innerText = `Howdy ${parsedUser.username}! Welcome to Coffee Saloon.`;
-    apiCall();
-    displayAPIdata();
+    apiCall().then(displayAPIdata);
   } else {
     document.getElementById("login-popup").style.display = "flex";
   }
@@ -45,7 +44,7 @@ const displayAPIdata = () => {
       container.innerHTML = parsedData[index].h;
     }, 10000);
   } else {
-    return;
+    console.error("No API data found in localStorage.");
   }
 };
 
@@ -67,6 +66,7 @@ document.getElementById("login-form").onsubmit = function (event) {
           document.getElementById(
             "hero-title"
           ).innerText = `Welcome to Coffee Saloon, ${user.username}`;
+          apiCall().then(displayAPIdata);
         } else {
           alert("Invalid username or password!");
         }
@@ -94,6 +94,7 @@ document.getElementById("login-form").onsubmit = function (event) {
         document.getElementById(
           "hero-title"
         ).innerText = `Welcome to Coffee Saloon, ${data.username}`;
+        apiCall().then(displayAPIdata);
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -121,6 +122,8 @@ const logout = () => {
   localStorage.removeItem("apiData");
   location.reload();
 };
+
+window.logout = logout;
 
 const toggleMode = () => {
   const body = document.body;

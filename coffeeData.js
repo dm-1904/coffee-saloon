@@ -192,4 +192,138 @@ export const coffeeData = [
   ],
 ];
 
-export const bakeryData = [];
+export const bakeryData = [
+  [
+    { catagory: "Croissants & Danishes" },
+    {
+      catagory: "Croissants & Danishes",
+      foodName: "Vanilla Bean Custard Danish",
+      calories: 230,
+      image:
+        "assets/bakery/croissants-danishes/vanilla-bean-custard-danish.png",
+    },
+    {
+      catagory: "Croissants & Danishes",
+      foodName: "Turkey Sage Danish",
+      calories: 270,
+      image: "assets/bakery/croissants-danishes/turkey-sage-danish.png",
+    },
+    {
+      catagory: "Croissants & Danishes",
+      foodName: "Baked Apple Croissant",
+      calories: 230,
+      image: "assets/bakery/croissants-danishes/baked-apple-croissant.png",
+    },
+    {
+      catagory: "Croissants & Danishes",
+      foodName: "Ham & Swiss Croissant",
+      calories: 320,
+      image: "assets/bakery/croissants-danishes/ham-swiss-croissant.png",
+    },
+    {
+      catagory: "Croissants & Danishes",
+      foodName: "Butter Croissant",
+      calories: 250,
+      image: "assets/bakery/croissants-danishes/butter-croissant.png",
+    },
+    {
+      catagory: "Croissants & Danishes",
+      foodName: "Chocolate Croissant",
+      calories: 300,
+      image: "assets/bakery/croissants-danishes/chocolate-croissant.png",
+    },
+    {
+      catagory: "Croissants & Danishes",
+      foodName: "Cheese Danish",
+      calories: 290,
+      image: "assets/bakery/croissants-danishes/cheese-danish.png",
+    },
+    {
+      catagory: "Croissants & Danishes",
+      foodName: "Sugar Plum Cheese Danish",
+      calories: 330,
+      image: "assets/bakery/croissants-danishes/sugar-plum-cheese-danish.png",
+    },
+  ],
+  [
+    { catagory: "Loaves & Cakes" },
+    {
+      catagory: "Loaves & Cakes",
+      foodName: "Banana, Walnut & Pecan Loaf",
+      calories: 380,
+      image: "assets/bakery/loaves-cakes/banana-walnut-pecan-loaf.png",
+    },
+    {
+      catagory: "Loaves & Cakes",
+      foodName: "Iced Lemon Loaf",
+      calories: 410,
+      image: "assets/bakery/loaves-cakes/iced-lemon-loaf.png",
+    },
+    {
+      catagory: "Loaves & Cakes",
+      foodName: "Pumpkin & Pepita Loaf",
+      calories: 360,
+      image: "assets/bakery/loaves-cakes/pumpkin-pepita-loaf.png",
+    },
+    {
+      catagory: "Loaves & Cakes",
+      foodName: "Cinnamon Coffee Cake",
+      calories: 380,
+      image: "assets/bakery/loaves-cakes/cinnamon-coffee-cake.png",
+    },
+    {
+      catagory: "Loaves & Cakes",
+      foodName: "Dark Toffee Bundt",
+      calories: 330,
+      image: "assets/bakery/loaves-cakes/dark-toffee-bundt.png",
+    },
+  ],
+  [
+    { catagory: "Muffins, Scones & Doughnuts" },
+    {
+      catagory: "Muffins, Scones & Doughnuts",
+      foodName: "Blueberry, Streusel Muffin",
+      calories: 370,
+      image: "assets/bakery/muffins/blueberry-streusel-muffin.png",
+    },
+    {
+      catagory: "Muffins, Scones & Doughnuts",
+      foodName: "Petite Vanilla Bean Scone",
+      calories: 130,
+      image: "assets/bakery/muffins/petite-vanilla-bean-scone.png",
+    },
+    {
+      catagory: "Muffins, Scones & Doughnuts",
+      foodName: "Blueberry Scone",
+      calories: 410,
+      image: "assets/bakery/muffins/blueberry-scone.png",
+    },
+    {
+      catagory: "Muffins, Scones & Doughnuts",
+      foodName: "Glazed Doughnut",
+      calories: 440,
+      image: "assets/bakery/muffins/glazed-doughnut.png",
+    },
+  ],
+  [
+    { catagory: "Bagels" },
+    {
+      catagory: "Bagels",
+      foodName: "Plain Bagel",
+      calories: 250,
+      image: "assets/bakery/bagels/plain-bagel.png",
+    },
+    {
+      catagory: "Bagels",
+      foodName: "Everything Bagel",
+      calories: 270,
+      image: "assets/bakery/bagels/everything-bagel.png",
+    },
+    {
+      catagory: "Bagels",
+      foodName: "Avocado Spread",
+      calories: 90,
+      image: "assets/bakery/bagels/avocado-spread.png",
+    },
+  ],
+];
