@@ -16,6 +16,7 @@ const apiCall = () => {
 
 window.onload = function () {
   checkUser();
+  applyMode();
 };
 
 const checkUser = () => {
@@ -119,4 +120,37 @@ const logout = () => {
   localStorage.removeItem("user");
   localStorage.removeItem("apiData");
   location.reload();
+};
+
+const toggleMode = () => {
+  const body = document.body;
+  body.classList.toggle("dark-mode");
+  const elements = document.querySelectorAll(
+    "header, h2, nav ul li a, .hero, footer, .popup-content, #quoteContainer"
+  );
+  elements.forEach((element) => {
+    element.classList.toggle("dark-mode");
+  });
+  const mode = body.classList.contains("dark-mode") ? "dark" : "light";
+  localStorage.setItem("mode", mode);
+  const toggleText = mode === "light" ? "Toggle Dark" : "Toggle Light";
+  document.getElementById("toggle-label").innerText = toggleText;
+};
+
+window.toggleMode = toggleMode;
+
+const applyMode = () => {
+  const mode = localStorage.getItem("mode");
+  if (mode === "dark") {
+    document.body.classList.add("dark-mode");
+    const elements = document.querySelectorAll(
+      "header, h2, nav ul li a, .hero, footer, .popup-content, #quoteContainer"
+    );
+    elements.forEach((element) => {
+      element.classList.add("dark-mode");
+    });
+    document.getElementById("mode-toggle").checked = true;
+  }
+  const toggleText = mode === "light" ? "Toggle Dark" : "Toggle Light";
+  document.getElementById("toggle-label").innerText = toggleText;
 };

@@ -79,11 +79,16 @@ nav ul li button {
 .content {
   max-width: 1200px;
   margin: 40px auto;
+  margin-top: 10px;
   padding: 0 20px;
 }
 
+#quoteContainer {
+  height: 165px;
+}
+
 #quoteContainer blockquote {
-  font-size: 30px;
+  font-size: 25px;
   padding-left: 40px;
   padding-right: 40px;
 }
@@ -91,7 +96,6 @@ nav ul li button {
 #quoteContainer footer {
   color: black;
   text-align: right;
-
   background: none;
 }
 
@@ -217,4 +221,134 @@ button {
   cursor: pointer;
   border-radius: 4px;
   font-size: 16px;
+}
+
+/* Toggle Switch */
+.toggle h2 {
+  margin-bottom: 0;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  margin-bottom: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Toggle Switch inside .content */
+.content .switch {
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  margin-bottom: 20px;
+}
+
+.content .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.content .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.content .slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+.content input:checked + .slider {
+  background-color: #2196f3;
+}
+
+.content input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background: #333;
+  color: #fff;
+}
+
+h2.dark-mode {
+  color: #fff;
+}
+
+header.dark-mode {
+  background: #222;
+  color: #fff;
+}
+
+nav ul li a.dark-mode {
+  color: #fff;
+}
+
+#quoteContainer.dark-mode footer {
+  color: #fff;
+}
+
+footer.dark-mode {
+  background: #222;
+  color: #fff;
+}
+
+.popup-content.dark-mode {
+  background: #222;
+  color: #fff;
 }
