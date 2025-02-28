@@ -1,3 +1,5 @@
+import { coffeeData } from "./coffeeData.js";
+
 const apiKey = import.meta.env.VITE_API_KEY;
 const corsProxy = "https://api.allorigins.win/get?url=";
 const apiUrlWithProxy = `${corsProxy}${encodeURIComponent(apiKey)}`;
@@ -17,6 +19,7 @@ const apiCall = () => {
 window.onload = function () {
   checkUser();
   applyMode();
+  displayMenuData();
 };
 
 const checkUser = () => {
@@ -46,6 +49,34 @@ const displayAPIdata = () => {
   } else {
     console.error("No API data found in localStorage.");
   }
+};
+
+const displayMenuData = () => {
+  const menuSection = document.getElementById("menu");
+  coffeeData.forEach((category) => {
+    const categoryTitle = document.createElement("h2");
+    categoryTitle.className = "category";
+    categoryTitle.innerText = category[0].category;
+    menuSection.appendChild(categoryTitle);
+
+    category.slice(1).forEach((item) => {
+      const menuItem = document.createElement("div");
+      menuItem.className = "menu-item";
+
+      const img = document.createElement("img");
+      img.src = item.image;
+      img.alt = item.coffeeName;
+      img.className = "menu-image";
+
+      const itemName = document.createElement("span");
+      itemName.className = "item-name";
+      itemName.innerText = item.coffeeName;
+
+      menuItem.appendChild(img);
+      menuItem.appendChild(itemName);
+      menuSection.appendChild(menuItem);
+    });
+  });
 };
 
 document.getElementById("login-form").onsubmit = function (event) {
