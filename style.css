@@ -105,6 +105,14 @@ nav ul li button {
 }
 
 .category-div {
+  margin-bottom: 50px;
+}
+
+.category-div hr {
+  margin: 20px 0;
+}
+
+.menu-content-box {
   display: flex;
   flex-wrap: wrap;
 }
@@ -113,8 +121,10 @@ nav ul li button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 30px;
-  padding-bottom: 20px;
+  margin: 10px;
+  /* padding-bottom: 20px; */
+  width: 200px;
+  text-align: center;
 }
 
 .menu-item:last-child {
@@ -125,7 +135,11 @@ nav ul li button {
   width: 150px;
   height: auto;
   border-radius: 50%;
-  margin-right: 20px;
+  /* margin-right: 20px; */
+}
+
+.item-name {
+  font-size: 20px;
 }
 
 footer {
