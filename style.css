@@ -104,6 +104,51 @@ nav ul li button {
   color: #6b4f4f;
 }
 
+.menu-button-box {
+  text-align: left;
+}
+
+.all-items,
+.all-drinks,
+.all-food {
+  color: #6b4f4f;
+  font-size: 1.5em;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.coffee-buttons,
+.food-buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.drink-button-box,
+.food-button-box {
+  cursor: default;
+}
+
+.coffee-buttons span,
+.food-buttons span {
+  color: #6b4f4f;
+  font-weight: 900;
+  cursor: pointer;
+  margin-right: 13px;
+}
+
+.sub-menu-button-box {
+  display: flex;
+  /* justify-content: center; */
+  flex-direction: column;
+}
+
+.coffee-buttons,
+.food-buttons {
+  display: flex;
+  /* flex-direction: column; */
+  margin: 0 20px;
+}
+
 .category-div {
   margin-bottom: 50px;
 }
