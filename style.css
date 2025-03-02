@@ -227,9 +227,11 @@ button {
   border-radius: 8px;
   text-align: center;
   width: 80%;
+  max-width: 1600px;
   height: 90%;
   margin: 0 auto;
   justify-content: space-between;
+  max-height: 700px;
 }
 
 .popup-pic {
@@ -238,19 +240,22 @@ button {
 
 .popup-pic img {
   width: 25vw;
+  max-width: 508px;
+  max-height: 590px;
 }
 
 .popup-greeting {
   margin-right: 20vw;
+  max-width: 540px;
 }
 
 .popup-greeting h1 {
-  font-size: 4vw;
+  font-size: 70px;
   margin-top: 30px;
 }
 
 .popup-greeting span {
-  font-size: 1.5vw;
+  font-size: 30px;
 }
 
 .popup-login {
@@ -391,7 +396,10 @@ body.dark-mode {
   color: #fff;
 }
 
-h2.dark-mode {
+h2.dark-mode,
+span.dark-mode,
+nav ul li a.dark-mode,
+#quoteContainer.dark-mode footer {
   color: #fff;
 }
 
@@ -400,13 +408,13 @@ header.dark-mode {
   color: #fff;
 }
 
-nav ul li a.dark-mode {
+/* nav ul li a.dark-mode {
   color: #fff;
-}
+} */
 
-#quoteContainer.dark-mode footer {
+/* #quoteContainer.dark-mode footer {
   color: #fff;
-}
+} */
 
 footer.dark-mode {
   background: #222;
