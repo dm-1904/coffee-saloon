@@ -19,6 +19,7 @@ body {
   line-height: 1.6;
   max-width: 1000px;
   margin: 0 auto;
+  cursor: default;
 }
 
 /* Header & Navigation */
@@ -43,6 +44,10 @@ nav ul li a {
   color: #dcd7c9;
   text-decoration: none;
   font-weight: bold;
+  transition: color 0.3s ease;
+}
+nav ul li a:hover {
+  color: #9d9990;
 }
 nav ul li button {
   background: #6b4f4f;
@@ -113,6 +118,20 @@ nav ul li button {
   font-size: 1.5em;
   font-weight: 900;
   cursor: pointer;
+}
+#all-drinks,
+#all-food {
+  cursor: default;
+}
+.all-items,
+.drink-button-box span,
+.food-button-box span {
+  transition: color 0.3s ease;
+}
+.all-items:hover,
+.drink-button-box span:hover,
+.food-button-box span:hover {
+  color: #a97474;
 }
 .coffee-buttons,
 .food-buttons {

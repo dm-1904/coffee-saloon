@@ -187,7 +187,7 @@ document.getElementById("login-form").onsubmit = function (event) {
 
           document.getElementById(
             "hero-title"
-          ).innerText = `Welcome to Coffee Saloon, ${user.username}`;
+          ).innerText = `Howdy ${parsedUser.username}! Welcome to Coffee Saloon.`;
           apiCall().then(displayAPIdata);
         } else {
           alert("Invalid username or password!");
@@ -215,7 +215,7 @@ document.getElementById("login-form").onsubmit = function (event) {
         localStorage.setItem("user", JSON.stringify(data));
         document.getElementById(
           "hero-title"
-        ).innerText = `Welcome to Coffee Saloon, ${data.username}`;
+        ).innerText = `Howdy ${parsedUser.username}! Welcome to Coffee Saloon.`;
         apiCall().then(displayAPIdata);
       })
       .catch((error) => {
