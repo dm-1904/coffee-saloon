@@ -251,11 +251,7 @@ const toggleMode = () => {
   const body = document.body;
   body.classList.toggle("dark-mode");
   const elements = document.querySelectorAll(
-<<<<<<< HEAD
-    "header, h2, nav ul li a, .hero, footer, .popup-content, #quoteContainer, span"
-=======
     "header, h2, nav ul li a, .hero, footer, .popup-content, #quoteContainer, span, h2.category"
->>>>>>> coffeeDataRefactor
   );
   elements.forEach((element) => {
     element.classList.toggle("dark-mode");
@@ -273,11 +269,7 @@ const applyMode = () => {
   if (mode === "dark") {
     document.body.classList.add("dark-mode");
     const elements = document.querySelectorAll(
-<<<<<<< HEAD
-      "header, h2, nav ul li a, .hero, footer, .popup-content, #quoteContainer, span"
-=======
       "header, h2, nav ul li a, .hero, footer, .popup-content, #quoteContainer, span, h2.category"
->>>>>>> coffeeDataRefactor
     );
     elements.forEach((element) => {
       element.classList.add("dark-mode");
