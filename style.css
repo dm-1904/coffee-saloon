@@ -386,29 +386,35 @@ input:checked + .slider:before {
 }
 
 /* Dark Mode */
-body.dark-mode {
+body.dark-mode,
+header.dark-mode,
+footer.dark-mode,
+.popup-content.dark-mode {
   background: #333;
   color: #fff;
 }
 
-h2.dark-mode {
+h2.dark-mode,
+span.dark-mode,
+nav ul li a.dark-mode,
+#quoteContainer.dark-mode footer {
   color: #fff;
 }
 
-header.dark-mode {
+/* header.dark-mode {
   background: #222;
   color: #fff;
-}
+} */
 
-nav ul li a.dark-mode {
+/* nav ul li a.dark-mode {
   color: #fff;
 }
 
 #quoteContainer.dark-mode footer {
   color: #fff;
-}
+} */
 
-footer.dark-mode {
+/* footer.dark-mode {
   background: #222;
   color: #fff;
 }
@@ -416,4 +422,4 @@ footer.dark-mode {
 .popup-content.dark-mode {
   background: #222;
   color: #fff;
-}
+} */

@@ -19,7 +19,7 @@ const apiCall = () => {
 window.onload = function () {
   checkUser();
   applyMode();
-  // displayMenuData();
+  displayMenuData();
 };
 
 const checkUser = () => {
@@ -244,7 +244,7 @@ const toggleMode = () => {
   const body = document.body;
   body.classList.toggle("dark-mode");
   const elements = document.querySelectorAll(
-    "header, h2, nav ul li a, .hero, footer, .popup-content, #quoteContainer"
+    "header, h2, nav ul li a, .hero, footer, .popup-content, #quoteContainer, span"
   );
   elements.forEach((element) => {
     element.classList.toggle("dark-mode");
@@ -262,7 +262,7 @@ const applyMode = () => {
   if (mode === "dark") {
     document.body.classList.add("dark-mode");
     const elements = document.querySelectorAll(
-      "header, h2, nav ul li a, .hero, footer, .popup-content, #quoteContainer"
+      "header, h2, nav ul li a, .hero, footer, .popup-content, #quoteContainer, span"
     );
     elements.forEach((element) => {
       element.classList.add("dark-mode");
