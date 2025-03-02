@@ -1,3 +1,4 @@
+/* Global Styles */
 html {
   background-image: url(./assets/background-desert.jpeg);
   background-attachment: fixed;
@@ -20,6 +21,7 @@ body {
   margin: 0 auto;
 }
 
+/* Header & Navigation */
 header {
   background: #3f4f44;
   color: #dcd7c9;
@@ -34,17 +36,14 @@ nav ul {
   justify-content: center;
   margin-top: 10px;
 }
-
 nav ul li {
   margin: 0 15px;
 }
-
 nav ul li a {
   color: #dcd7c9;
   text-decoration: none;
   font-weight: bold;
 }
-
 nav ul li button {
   background: #6b4f4f;
   color: #dcd7c9;
@@ -54,13 +53,13 @@ nav ul li button {
   border-radius: 4px;
   font-size: 16px;
 }
-
 #logout-button {
   position: absolute;
-  top: 0px;
+  top: 0;
   right: 20px;
 }
 
+/* Hero Section */
 .hero {
   background: url("./assets/coffee-bg.jpg") no-repeat center center/cover;
   height: 400px;
@@ -72,48 +71,41 @@ nav ul li button {
   text-align: center;
   flex-direction: column;
 }
-
 .tag-line {
   font-size: 30px;
 }
-
 .hero h1 {
   font-size: 48px;
 }
 
+/* Content */
 .content {
   max-width: 1200px;
-  margin: 40px auto;
-  margin-top: 10px;
+  margin: 40px auto 10px;
   padding: 0 20px;
 }
-
 #quoteContainer {
   height: 165px;
 }
-
 #quoteContainer blockquote {
   font-size: 25px;
-  padding-left: 40px;
-  padding-right: 40px;
+  padding: 0 40px;
 }
-
 #quoteContainer footer {
   color: black;
   text-align: right;
   background: none;
 }
-
 .content h2 {
   margin-bottom: 20px;
   color: #6b4f4f;
 }
 
+/* Menu & Items */
 .menu-button-box {
   text-align: left;
   margin-bottom: 40px;
 }
-
 .all-items,
 .all-drinks,
 .all-food {
@@ -122,18 +114,16 @@ nav ul li button {
   font-weight: 900;
   cursor: pointer;
 }
-
 .coffee-buttons,
 .food-buttons {
   display: flex;
   flex-direction: column;
+  margin: 0 20px;
 }
-
 .drink-button-box,
 .food-button-box {
   cursor: default;
 }
-
 .coffee-buttons span,
 .food-buttons span {
   color: #6b4f4f;
@@ -141,65 +131,50 @@ nav ul li button {
   cursor: pointer;
   margin-right: 13px;
 }
-
 .sub-menu-button-box {
   display: flex;
-  /* justify-content: center; */
   flex-direction: column;
 }
-
-.coffee-buttons,
-.food-buttons {
-  display: flex;
-  /* flex-direction: column; */
-  margin: 0 20px;
-}
-
 .category-div {
   margin-bottom: 50px;
 }
-
 .category-div hr {
   margin: 20px 0;
 }
-
 .menu-content-box {
   display: flex;
   flex-wrap: wrap;
 }
-
 .menu-item {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 10px;
-  /* padding-bottom: 20px; */
   width: 200px;
   text-align: center;
 }
-
 .menu-item:last-child {
   border-bottom: none;
 }
-
 .menu-item img {
   width: 150px;
   height: auto;
   border-radius: 50%;
-  /* margin-right: 20px; */
 }
-
 .item-name {
   font-size: 20px;
 }
 
+/* Footer */
 footer {
   background: #333;
   color: #fff;
   text-align: center;
-  padding: 20px 0;
+  padding: 40px 20px;
+  margin-top: 40px;
 }
 
+/* Buttons */
 button {
   background: #6b4f4f;
   color: #fff;
@@ -211,6 +186,7 @@ button {
   font-size: 16px;
 }
 
+/* Popup Styles */
 .popup {
   display: none;
   position: fixed;
@@ -223,7 +199,6 @@ button {
   align-items: center;
   z-index: 1000;
 }
-
 .popup-content {
   display: flex;
   background: #3f4f44;
@@ -235,51 +210,40 @@ button {
   max-width: 1600px;
   height: 90%;
   margin: 0 auto;
-  justify-content: space-between;
+  justify-content: space-evenly;
   max-height: 700px;
 }
-
 .popup-pic {
   align-self: flex-end;
 }
-
 .popup-pic img {
-  width: 25vw;
-  max-width: 508px;
+  width: 400px;
+  max-width: 400px;
   max-height: 590px;
 }
-
 .popup-greeting {
-  margin-right: 20vw;
-  max-width: 540px;
+  margin: 0 20px;
+  max-width: 400px;
 }
-
 .popup-greeting h1 {
-  font-size: 70px;
+  font-size: 50px;
   margin-top: 30px;
 }
-
 .popup-greeting span {
   font-size: 30px;
 }
-
 .popup-login {
-  position: absolute;
-  align-self: flex-end;
-  left: 55vw;
-  margin-bottom: 60px;
+  position: relative;
+  margin: 20px;
 }
-
 .popup-content h2 {
   margin-bottom: 20px;
 }
-
 .popup-content label {
   display: block;
   margin-bottom: 10px;
   text-align: left;
 }
-
 .popup-content input {
   width: 100%;
   padding: 10px;
@@ -287,7 +251,6 @@ button {
   border: 1px solid #ddd;
   border-radius: 4px;
 }
-
 .popup-content button {
   background: #6b4f4f;
   color: #fff;
@@ -298,71 +261,25 @@ button {
   font-size: 16px;
 }
 
-/* Toggle Switch */
+/* Toggle Switch (Combined) */
 .toggle h2 {
   margin-bottom: 0;
 }
-
-.switch {
+.switch,
+.content .switch {
   position: relative;
   display: inline-block;
   width: 60px;
   height: 34px;
   margin-bottom: 20px;
 }
-
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  transition: 0.4s;
-  border-radius: 34px;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  transition: 0.4s;
-  border-radius: 50%;
-}
-
-input:checked + .slider {
-  background-color: #2196f3;
-}
-
-input:checked + .slider:before {
-  transform: translateX(26px);
-}
-
-/* Toggle Switch inside .content */
-.content .switch {
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-  margin-bottom: 20px;
-}
-
+.switch input,
 .content .switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
-
+.slider,
 .content .slider {
   position: absolute;
   cursor: pointer;
@@ -374,7 +291,7 @@ input:checked + .slider:before {
   transition: 0.4s;
   border-radius: 34px;
 }
-
+.slider:before,
 .content .slider:before {
   position: absolute;
   content: "";
@@ -386,11 +303,11 @@ input:checked + .slider:before {
   transition: 0.4s;
   border-radius: 50%;
 }
-
+input:checked + .slider,
 .content input:checked + .slider {
   background-color: #2196f3;
 }
-
+input:checked + .slider:before,
 .content input:checked + .slider:before {
   transform: translateX(26px);
 }
@@ -403,7 +320,6 @@ footer.dark-mode,
   background: #333;
   color: #fff;
 }
-
 h2.dark-mode,
 span.dark-mode,
 nav ul li a.dark-mode,
@@ -411,24 +327,79 @@ nav ul li a.dark-mode,
   color: #fff;
 }
 
+/* Contact Form */
 .contact-box {
   max-width: 300px;
   margin-left: 50px;
   margin-bottom: 50px;
 }
-
 .contact-form {
   display: flex;
   flex-direction: column;
 }
-
+.contact-form input,
+.contact-form textarea {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+}
 .contact-form input {
-  margin-bottom: 10px;
-  border-radius: 5px;
-  height: 30px;
+  height: 40px;
+}
+.contact-form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+.submit-form {
+  background: #6b4f4f;
+  border: none;
+  padding: 12px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+.submit-form:hover {
+  background: #a97474;
+}
+.info-box p {
+  margin: 10px 0;
+}
+.info-box a {
+  color: #fff;
+  text-decoration: underline;
+}
+.info-box a:hover {
+  color: #6b4f4f;
 }
 
-.form-feedback {
-  height: 60px;
-  border-radius: 5px;
+/* Responsive Styles */
+@media (max-width: 920px) {
+  .popup-content {
+    flex-direction: column;
+    height: auto;
+    max-height: none;
+    padding: 20px 10px;
+  }
+  .popup-pic {
+    margin-bottom: 20px;
+  }
+  .popup-pic img {
+    width: 50vw;
+    max-width: 300px;
+  }
+  .popup-greeting {
+    margin: 0 0 20px;
+  }
+  .popup-greeting h1 {
+    font-size: 2rem;
+    margin-top: 10px;
+  }
+  .popup-login {
+    left: auto;
+    margin: 0 auto;
+    width: 90%;
+  }
 }
