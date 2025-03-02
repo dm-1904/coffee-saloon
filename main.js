@@ -11,6 +11,7 @@ const apiCall = () => {
     .then((data) => {
       const parsedData = JSON.parse(data.contents);
       localStorage.setItem("apiData", JSON.stringify(parsedData));
+      displayAPIdata(); // Display the API data immediately after fetching
     })
     .catch((err) => {
       console.error(`Error fetching API data: ${err}`);
@@ -30,7 +31,7 @@ const checkUser = () => {
     document.getElementById(
       "hero-title"
     ).innerText = `Howdy ${parsedUser.username}! Welcome to Coffee Saloon.`;
-    apiCall().then(displayAPIdata);
+    apiCall(); // Fetch API data and display it
   } else {
     document.getElementById("login-popup").style.display = "flex";
   }
@@ -187,8 +188,8 @@ document.getElementById("login-form").onsubmit = function (event) {
 
           document.getElementById(
             "hero-title"
-          ).innerText = `Howdy ${parsedUser.username}! Welcome to Coffee Saloon.`;
-          apiCall().then(displayAPIdata);
+          ).innerText = `Howdy ${user.username}! Welcome to Coffee Saloon.`;
+          apiCall(); // Fetch API data and display it
         } else {
           alert("Invalid username or password!");
         }
@@ -215,8 +216,8 @@ document.getElementById("login-form").onsubmit = function (event) {
         localStorage.setItem("user", JSON.stringify(data));
         document.getElementById(
           "hero-title"
-        ).innerText = `Howdy ${parsedUser.username}! Welcome to Coffee Saloon.`;
-        apiCall().then(displayAPIdata);
+        ).innerText = `Howdy ${data.username}! Welcome to Coffee Saloon.`;
+        apiCall(); // Fetch API data and display it
       })
       .catch((error) => {
         console.error("Error:", error);
