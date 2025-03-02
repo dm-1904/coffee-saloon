@@ -19,7 +19,7 @@ const apiCall = () => {
 window.onload = function () {
   checkUser();
   applyMode();
-  displayMenuData();
+  // displayMenuData();
 };
 
 const checkUser = () => {
@@ -87,6 +87,63 @@ const displayMenuData = () => {
       menuContentBox.appendChild(menuItem);
     });
 
+    menuSection.appendChild(categoryDiv);
+  });
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+  const menuButtons = document.querySelectorAll(".menu-button-box span");
+  menuButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      handleSort(this.innerHTML);
+    });
+  });
+});
+
+const handleSort = (str) => {
+  if (str === "All Items") {
+    return displayMenuData();
+  }
+  const menuSection = document.getElementById("menu");
+  menuSection.innerHTML = "";
+
+  const filterData = coffeeData.filter((data) => {
+    return data[0].category === str;
+  });
+
+  filterData.forEach((data) => {
+    const categoryDiv = document.createElement("div");
+    categoryDiv.className = "category-div";
+
+    const categoryTitle = document.createElement("h2");
+    categoryTitle.className = "category";
+    categoryTitle.innerText = data[0].category;
+    categoryDiv.appendChild(categoryTitle);
+
+    const hr = document.createElement("hr");
+    categoryDiv.appendChild(hr);
+
+    const menuContentBox = document.createElement("div");
+    menuContentBox.className = "menu-content-box";
+    categoryDiv.appendChild(menuContentBox);
+
+    data.slice(1).forEach((item) => {
+      const menuItem = document.createElement("div");
+      menuItem.className = "menu-image";
+
+      const img = document.createElement("img");
+      img.src = item.image;
+      img.alt = item.product;
+      img.className = "menu-image";
+
+      const itemName = document.createElement("span");
+      itemName.className = "item-name";
+      itemName.innerText = item.product;
+
+      menuItem.appendChild(img);
+      menuItem.appendChild(itemName);
+      menuContentBox.appendChild(menuItem);
+    });
     menuSection.appendChild(categoryDiv);
   });
 };
