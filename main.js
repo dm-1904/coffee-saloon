@@ -69,6 +69,9 @@ const displayMenuData = () => {
 
     const categoryTitle = document.createElement("h2");
     categoryTitle.className = "category";
+    if (mode === "dark") {
+      categoryTitle.classList.add("dark-mode");
+    }
     categoryTitle.innerText = category[0].category;
     categoryDiv.appendChild(categoryTitle);
 
@@ -248,7 +251,11 @@ const toggleMode = () => {
   const body = document.body;
   body.classList.toggle("dark-mode");
   const elements = document.querySelectorAll(
+<<<<<<< HEAD
     "header, h2, nav ul li a, .hero, footer, .popup-content, #quoteContainer, span"
+=======
+    "header, h2, nav ul li a, .hero, footer, .popup-content, #quoteContainer, span, h2.category"
+>>>>>>> coffeeDataRefactor
   );
   elements.forEach((element) => {
     element.classList.toggle("dark-mode");
@@ -266,12 +273,24 @@ const applyMode = () => {
   if (mode === "dark") {
     document.body.classList.add("dark-mode");
     const elements = document.querySelectorAll(
+<<<<<<< HEAD
       "header, h2, nav ul li a, .hero, footer, .popup-content, #quoteContainer, span"
+=======
+      "header, h2, nav ul li a, .hero, footer, .popup-content, #quoteContainer, span, h2.category"
+>>>>>>> coffeeDataRefactor
     );
     elements.forEach((element) => {
       element.classList.add("dark-mode");
     });
     document.getElementById("mode-toggle").checked = true;
+  } else {
+    document.body.classList.remove("dark-mode");
+    const elements = document.querySelectorAll(
+      "header, h2, nav ul li a, .hero, footer, .popup-content, #quoteContainer, span, h2.category"
+    );
+    elements.forEach((element) => {
+      element.classList.remove("dark-mode");
+    });
   }
   const toggleText = mode === "light" ? "Toggle Dark" : "Toggle Light";
   document.getElementById("toggle-label").innerText = toggleText;

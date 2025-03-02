@@ -13,7 +13,7 @@ html {
 
 body {
   font-family: Arial, sans-serif;
-  background: #fdfdfd;
+  background: #eeeeee;
   color: #333;
   line-height: 1.6;
   max-width: 1000px;
@@ -70,6 +70,11 @@ nav ul li button {
   color: #fff;
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
   text-align: center;
+  flex-direction: column;
+}
+
+.tag-line {
+  font-size: 30px;
 }
 
 .hero h1 {
@@ -405,3 +410,28 @@ nav ul li a.dark-mode,
 #quoteContainer.dark-mode footer {
   color: #fff;
 }
+<<<<<<< HEAD
+=======
+
+.contact-box {
+  max-width: 300px;
+  margin-left: 50px;
+  margin-bottom: 50px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form input {
+  margin-bottom: 10px;
+  border-radius: 5px;
+  height: 30px;
+}
+
+.form-feedback {
+  height: 60px;
+  border-radius: 5px;
+}
+>>>>>>> coffeeDataRefactor
