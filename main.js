@@ -53,6 +53,10 @@ const displayAPIdata = () => {
 
 const displayMenuData = () => {
   const menuSection = document.getElementById("menu");
+  const menuSubSection = document.createElement("div");
+  menuSubSection.className = "menuSubSection";
+  menuSection.appendChild(menuSubSection);
+  menuSubSection.innerHTML = "";
   coffeeData.forEach((category) => {
     const categoryDiv = document.createElement("div");
     categoryDiv.className = "category-div";
@@ -87,7 +91,7 @@ const displayMenuData = () => {
       menuContentBox.appendChild(menuItem);
     });
 
-    menuSection.appendChild(categoryDiv);
+    menuSubSection.appendChild(categoryDiv);
   });
 };
 
@@ -105,7 +109,10 @@ const handleSort = (str) => {
     return displayMenuData();
   }
   const menuSection = document.getElementById("menu");
-  menuSection.innerHTML = "";
+  const menuSubSection = document.createElement("div");
+  menuSubSection.className = "menuSubSection";
+  menuSection.appendChild(menuSubSection);
+  menuSubSection.innerHTML = "";
 
   const filterData = coffeeData.filter((data) => {
     return data[0].category === str;
@@ -129,7 +136,7 @@ const handleSort = (str) => {
 
     data.slice(1).forEach((item) => {
       const menuItem = document.createElement("div");
-      menuItem.className = "menu-image";
+      menuItem.className = "menu-item";
 
       const img = document.createElement("img");
       img.src = item.image;
