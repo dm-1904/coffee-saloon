@@ -51,12 +51,66 @@ const displayAPIdata = () => {
   }
 };
 
+// const displayMenuData = () => {
+//   const menuSection = document.getElementById("menu");
+//   // document.getElementsByClassName("menuSubSection").remove();
+
+//   const menuSubSection = document.createElement("div");
+//   menuSubSection.className = "menuSubSection";
+//   menuSection.appendChild(menuSubSection);
+
+//   coffeeData.forEach((category) => {
+//     const categoryDiv = document.createElement("div");
+//     categoryDiv.className = "category-div";
+
+//     const categoryTitle = document.createElement("h2");
+//     categoryTitle.className = "category";
+//     categoryTitle.innerText = category[0].category;
+//     categoryDiv.appendChild(categoryTitle);
+
+//     const hr = document.createElement("hr");
+//     categoryDiv.appendChild(hr);
+
+//     const menuContentBox = document.createElement("div");
+//     menuContentBox.className = "menu-content-box";
+//     categoryDiv.appendChild(menuContentBox);
+
+//     category.slice(1).forEach((item) => {
+//       const menuItem = document.createElement("div");
+//       menuItem.className = "menu-item";
+
+//       const img = document.createElement("img");
+//       img.src = item.image;
+//       img.alt = item.product;
+//       img.className = "menu-image";
+
+//       const itemName = document.createElement("span");
+//       itemName.className = "item-name";
+//       itemName.innerText = item.product;
+
+//       menuItem.appendChild(img);
+//       menuItem.appendChild(itemName);
+//       menuContentBox.appendChild(menuItem);
+//     });
+
+//     menuSubSection.appendChild(categoryDiv);
+//   });
+// };
+
 const displayMenuData = () => {
   const menuSection = document.getElementById("menu");
-  const menuSubSection = document.createElement("div");
-  menuSubSection.className = "menuSubSection";
-  menuSection.appendChild(menuSubSection);
-  menuSubSection.innerHTML = "";
+  // Look for an existing dynamic container
+  let menuSubSection = menuSection.querySelector(".menuSubSection");
+  if (!menuSubSection) {
+    // Create one if it doesn't exist
+    menuSubSection = document.createElement("div");
+    menuSubSection.className = "menuSubSection";
+    menuSection.appendChild(menuSubSection);
+  } else {
+    // Clear only the dynamic content, preserving static HTML
+    menuSubSection.innerHTML = "";
+  }
+
   coffeeData.forEach((category) => {
     const categoryDiv = document.createElement("div");
     categoryDiv.className = "category-div";
@@ -104,19 +158,77 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// const handleSort = (str) => {
+//   if (str === "All Items") {
+//     return displayMenuData();
+//   }
+//   const menuSection = document.getElementById("menu");
+//   document.getElementsByClassName("menuSubSection").remove();
+
+//   const menuSubSection = document.createElement("div");
+//   menuSubSection.className = "menuSubSection";
+//   menuSection.appendChild(menuSubSection);
+
+//   const filterData = coffeeData.filter((data) => {
+//     return data[0].category === str;
+//   });
+
+//   filterData.forEach((data) => {
+//     const categoryDiv = document.createElement("div");
+//     categoryDiv.className = "category-div";
+
+//     const categoryTitle = document.createElement("h2");
+//     categoryTitle.className = "category";
+//     categoryTitle.innerText = data[0].category;
+//     categoryDiv.appendChild(categoryTitle);
+
+//     const hr = document.createElement("hr");
+//     categoryDiv.appendChild(hr);
+
+//     const menuContentBox = document.createElement("div");
+//     menuContentBox.className = "menu-content-box";
+//     categoryDiv.appendChild(menuContentBox);
+
+//     data.slice(1).forEach((item) => {
+//       const menuItem = document.createElement("div");
+//       menuItem.className = "menu-item";
+
+//       const img = document.createElement("img");
+//       img.src = item.image;
+//       img.alt = item.product;
+//       img.className = "menu-image";
+
+//       const itemName = document.createElement("span");
+//       itemName.className = "item-name";
+//       itemName.innerText = item.product;
+
+//       menuItem.appendChild(img);
+//       menuItem.appendChild(itemName);
+//       menuContentBox.appendChild(menuItem);
+//     });
+//     menuSubSection.appendChild(categoryDiv);
+//   });
+// };
+
 const handleSort = (str) => {
+  const menuSection = document.getElementById("menu");
+  // Target only the dynamic container so the static HTML remains intact
+  let menuSubSection = menuSection.querySelector(".menuSubSection");
+  if (!menuSubSection) {
+    menuSubSection = document.createElement("div");
+    menuSubSection.className = "menuSubSection";
+    menuSection.appendChild(menuSubSection);
+  } else {
+    menuSubSection.innerHTML = ""; // Clear previous dynamic content
+  }
+
+  // If "All Items" is selected, display all data
   if (str === "All Items") {
     return displayMenuData();
   }
-  const menuSection = document.getElementById("menu");
-  const menuSubSection = document.createElement("div");
-  menuSubSection.className = "menuSubSection";
-  menuSection.appendChild(menuSubSection);
-  menuSubSection.innerHTML = "";
 
-  const filterData = coffeeData.filter((data) => {
-    return data[0].category === str;
-  });
+  // Filter coffeeData based on the selected category
+  const filterData = coffeeData.filter((data) => data[0].category === str);
 
   filterData.forEach((data) => {
     const categoryDiv = document.createElement("div");
@@ -151,7 +263,7 @@ const handleSort = (str) => {
       menuItem.appendChild(itemName);
       menuContentBox.appendChild(menuItem);
     });
-    menuSection.appendChild(categoryDiv);
+    menuSubSection.appendChild(categoryDiv);
   });
 };
 
