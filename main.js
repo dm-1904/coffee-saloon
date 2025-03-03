@@ -128,6 +128,7 @@ const displayMenuData = () => {
     category.slice(1).forEach((item) => {
       const menuItem = document.createElement("div");
       menuItem.className = "menu-item";
+      menuItem.addEventListener("click", () => showMenuItemPopup(item));
 
       const img = document.createElement("img");
       img.src = item.image;
@@ -146,6 +147,21 @@ const displayMenuData = () => {
     menuSubSection.appendChild(categoryDiv);
   });
 };
+
+const showMenuItemPopup = (item) => {
+  document.getElementById("popup-item-name").innerText = item.product;
+  document.getElementById(
+    "popup-item-description"
+  ).innerText = `Calories: ${item.calories}`;
+  document.getElementById("popup-item-image").src = item.image;
+  document.getElementById("menu-item-popup").style.display = "flex";
+};
+
+const closeMenuItemPopup = () => {
+  document.getElementById("menu-item-popup").style.display = "none";
+};
+
+window.closeMenuItemPopup = closeMenuItemPopup;
 
 document.addEventListener("DOMContentLoaded", () => {
   const menuButtons = document.querySelectorAll(".menu-button-box span");
@@ -195,6 +211,7 @@ const handleSort = (str) => {
     data.slice(1).forEach((item) => {
       const menuItem = document.createElement("div");
       menuItem.className = "menu-item";
+      menuItem.addEventListener("click", () => showMenuItemPopup(item));
 
       const img = document.createElement("img");
       img.src = item.image;
