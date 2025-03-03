@@ -11,7 +11,7 @@ const apiCall = () => {
     .then((data) => {
       const parsedData = JSON.parse(data.contents);
       localStorage.setItem("apiData", JSON.stringify(parsedData));
-      displayAPIdata(); // Display the API data immediately after fetching
+      displayAPIdata();
     })
     .catch((err) => {
       console.error(`Error fetching API data: ${err}`);
@@ -31,7 +31,7 @@ const checkUser = () => {
     document.getElementById(
       "hero-title"
     ).innerText = `Howdy ${parsedUser.username}! Welcome to Coffee Saloon.`;
-    apiCall(); // Fetch API data and display it
+    apiCall();
   } else {
     document.getElementById("login-popup").style.display = "flex";
   }
@@ -52,6 +52,48 @@ const displayAPIdata = () => {
     console.error("No API data found in localStorage.");
   }
 };
+
+const getArizonaTime = () => {
+  return new Date(
+    new Date().toLocaleString("en-US", { timeZone: "America/Phoenix" })
+  );
+};
+
+const updateCountdown = () => {
+  const now = getArizonaTime();
+  const currentHour = now.getHours();
+
+  if (currentHour >= 11 && currentHour < 13) {
+    document.getElementById("timer").textContent = "It's Happy Hour!!";
+    return;
+  }
+
+  const target = new Date(now);
+  target.setMilliseconds(0);
+  target.setSeconds(0);
+  target.setMinutes(0);
+
+  if (currentHour < 11) {
+    target.setHours(11);
+  } else {
+    target.setDate(target.getDate() + 1);
+    target.setHours(11);
+  }
+
+  const diff = target - now;
+  const hours = Math.floor(diff / (1000 * 60 * 60));
+  const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+  const formatted = `${hours.toString().padStart(2, "0")}:${minutes
+    .toString()
+    .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+
+  document.getElementById("timer").textContent = formatted;
+};
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
 
 const displayMenuData = () => {
   const menuSection = document.getElementById("menu");

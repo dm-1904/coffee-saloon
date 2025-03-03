@@ -30,7 +30,6 @@ header {
   text-align: center;
   position: relative;
 }
-
 nav ul {
   list-style: none;
   display: flex;
@@ -57,6 +56,13 @@ nav ul li button {
   cursor: pointer;
   border-radius: 4px;
   font-size: 16px;
+}
+.timer-box {
+  position: absolute;
+  margin-left: 20px;
+}
+.timer-box h3 {
+  margin: 0;
 }
 #logout-button {
   position: absolute;
