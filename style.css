@@ -473,9 +473,12 @@ nav ul li a.dark-mode,
   .content {
     margin: 20px auto;
     padding: 0 10px;
+    text-align: center;
+  }
+  div .menu-content-box {
+    justify-content: center;
   }
   .menu-item {
-    width: 100%;
     margin: 10px 0;
   }
   footer {
