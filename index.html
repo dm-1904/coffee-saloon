@@ -11,6 +11,12 @@
       rel="stylesheet"
       href="style.css"
     />
+    <link
+      rel="icon"
+      href="/assets/CS-3-4-2025.png"
+      type="image/png"
+      sizes="32x32"
+    />
   </head>
   <body>
     <div id="main-content">
@@ -20,7 +26,11 @@
           <div id="timer"></div>
           <span class="timer-text">Happy Hour every day from 11a - 1p</span>
         </div>
-        <h1>Coffee Saloon</h1>
+        <img
+          src="/assets/Coffee-Saloon-header.png"
+          alt=""
+          class="header-logo"
+        />
         <nav>
           <ul>
             <li><a href="#about">About</a></li>
@@ -118,33 +128,36 @@
         </div>
       </section>
 
-      <!-- Footer / Contact Section -->
-      <footer id="contact">
+      <!-- Contact Section -->
+      <section id="contact">
+        <div class="contact-box">
+          <h2>Contact Us!</h2>
+          <form
+            action=""
+            class="contact-form"
+          >
+            <input
+              type="text"
+              placeholder="Name"
+              class="name"
+            />
+            <input
+              type="email"
+              placeholder="Email"
+              class="email"
+            />
+            <textarea
+              name="feedback"
+              placeholder="We love to hear your thoughts!"
+              class="form-feedback"
+            ></textarea>
+            <button class="submit-form">Submit</button>
+          </form>
+        </div>
+      </section>
+      <!-- Footer  -->
+      <footer id="footer">
         <div class="footer-container">
-          <div class="contact-box">
-            <h2>Contact Us!</h2>
-            <form
-              action=""
-              class="contact-form"
-            >
-              <input
-                type="text"
-                placeholder="Name"
-                class="name"
-              />
-              <input
-                type="email"
-                placeholder="Email"
-                class="email"
-              />
-              <textarea
-                name="feedback"
-                placeholder="We love to hear your thoughts!"
-                class="form-feedback"
-              ></textarea>
-              <button class="submit-form">Submit</button>
-            </form>
-          </div>
           <div class="info-box">
             <p>
               Contact us at:
@@ -227,15 +240,29 @@
         >
           Close
         </button>
-        <div class="popup-pic">
+
+        <div
+          id="popup-pic"
+          class="popup-pic"
+        >
+          <div class="popup-header">
+            <img
+              src="/assets/Coffee-Saloon-3-4-2025.png"
+              alt=""
+            />
+          </div>
           <img
             id="popup-item-image"
             src=""
             alt=""
           />
         </div>
-        <div class="item-details">
+        <div
+          id="item-details"
+          class="item-details"
+        >
           <h1 id="popup-item-name"></h1>
+          <span id="popup-item-calories"></span>
           <span id="popup-item-description"></span>
         </div>
       </div>

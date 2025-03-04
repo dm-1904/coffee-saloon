@@ -151,10 +151,12 @@ const displayMenuData = () => {
 const showMenuItemPopup = (item) => {
   document.getElementById("popup-item-name").innerText = item.product;
   document.getElementById(
-    "popup-item-description"
+    "popup-item-calories"
   ).innerText = `Calories: ${item.calories}`;
   document.getElementById("popup-item-image").src = item.image;
   document.getElementById("menu-item-popup").style.display = "flex";
+  document.getElementById("popup-item-description").innerText =
+    item.description;
 };
 
 const closeMenuItemPopup = () => {

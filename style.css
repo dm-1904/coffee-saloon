@@ -30,6 +30,9 @@ header {
   text-align: center;
   position: relative;
 }
+.header-logo {
+  width: 400px;
+}
 nav ul {
   list-style: none;
   display: flex;
@@ -363,6 +366,9 @@ nav ul li a.dark-mode,
 }
 
 /* Contact Form */
+#contact {
+  background-color: #3f4f44;
+}
 .contact-box {
   max-width: 300px;
   margin-left: 50px;
@@ -503,7 +509,6 @@ nav ul li a.dark-mode,
   align-items: center;
   z-index: 1000;
 }
-
 .menu-item-popup-content {
   display: flex;
   background: #1e3932;
@@ -516,31 +521,28 @@ nav ul li a.dark-mode,
   height: 90%;
   margin: 0 auto;
   justify-content: space-evenly;
-  align-items: center;
-  max-height: 700px;
+  align-items: flex-start;
+  max-height: 800px;
 }
-
 .menu-item-popup-content img {
   width: 400px;
   max-width: 400px;
   max-height: 590px;
   margin-bottom: 100px;
 }
-
 .menu-item-popup-content .item-details {
   margin: 0 20px;
   max-width: 400px;
 }
-
 .menu-item-popup-content .item-details h1 {
   font-size: 50px;
   margin-top: 30px;
 }
-
 .menu-item-popup-content .item-details span {
   font-size: 30px;
+  display: block;
+  margin: 20px 0;
 }
-
 .menu-item-popup-content .close-button {
   background: #6b4f4f;
   color: #fff;
@@ -552,4 +554,27 @@ nav ul li a.dark-mode,
   position: absolute;
   top: 20px;
   right: 20px;
+}
+
+@media (max-width: 1100px) {
+  .menu-item-popup-content {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    max-height: 100%;
+    min-width: 450px;
+  }
+  #popup-item-image {
+    display: none;
+  }
+  .menu-item-popup-content img,
+  .popup-pic {
+    margin-bottom: 0px;
+  }
+  .popup-pic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
 }
