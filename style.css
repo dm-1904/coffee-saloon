@@ -4,6 +4,7 @@ html {
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
+  min-width: 420px;
 }
 
 * {
@@ -209,7 +210,6 @@ footer {
   color: #fff;
   text-align: center;
   padding: 40px 20px;
-  margin-top: 40px;
 }
 
 /* Buttons */
@@ -370,13 +370,17 @@ nav ul li a.dark-mode,
   background-color: #3f4f44;
 }
 .contact-box {
-  max-width: 300px;
+  max-width: 350px;
   margin-left: 50px;
-  margin-bottom: 50px;
+  padding: 50px 0;
+}
+.contact-box img {
+  width: 400px;
 }
 .contact-form {
   display: flex;
   flex-direction: column;
+  padding-left: 40px;
 }
 .contact-form input,
 .contact-form textarea {
